@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'Proxima Nova Regular';
+    src: url("../source/fonts/ProximaNovaRegular.woff") format("woff"), url("../source/fonts/ProximaNovaRegular.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url("../source/fonts/ProximaNovaBold.woff") format("woff"), url("../source/fonts/ProximaNovaBold.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova Light';
+    src: url("../source/fonts/ProximaNovaLight.woff") format("woff"), url("../source/fonts/ProximaNovaLight.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSans Regular';
+    src: url("../source/fonts/PTSansRegular.woff") format("woff"), url("../source/fonts/PTSansRegular.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSans Bold';
+    src: url("../source/fonts/PTSansBold.woff") format("woff"), url("../source/fonts/PTSansBold.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+/******************************
+********** general ************
+******************************/
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #2b2b2b;
+    font-family: 'PTSans Regular', sans-serif;
+}
+
+html, body {
+    background-color: #ffffff;
+    width: 100%;
+}
+
+a, button, input[type="submit"], input[type="cancel"], input[type="reset"] {
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-appearance: none;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active, a:focus {
+    outline: none;
+}
+
+button, button:hover, button:active {
+    outline: none;
+    border: none;
+}
+button::-moz-focus-inner {
+    outline: none;
+    border: none;
+}
+input, input:hover, input:active, input:focus {
+    outline: none;
+}
+textarea, textarea:hover, textarea:active, textarea:focus {
+    outline: none;
+    border: none;
+}
+
+ul li, ol li {
+    display: inline-block;
+    vertical-align: middle;
+    list-style: none;
+}
+
+h1 {
+    font-family: "Proxima Nova Light", sans-serif;
+    font-size: 2.1875em;
+    color: #ffffff;
+    font-weight: 100;
+    line-height: 1.2;
+}
+h1 span {
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+h2 {
+    font-size: 1.5625em;
+    font-weight: 100;
+    line-height: 1.2;
+}
+h3 {
+    font-family: 'PTSans Bold', sans-serif;
+    font-size: 1.0625em;
+    font-weight: 100;
+}
+button {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'PTSans Bold', sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+    text-transform: uppercase;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.image-wrap {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.image-wrap img {
+    display: block;
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wrapper {
+    display: block;
+    width: 100%;
+    max-width: 1220px;
+    padding: 0 20px;
+    position: relative;
+    margin: 0 auto;
+}
+.wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.form-field:focus::-webkit-input-placeholder {color: transparent;}
+.form-field:focus::-moz-placeholder {color: transparent;}
+.form-field:focus:-moz-placeholder {color: transparent;}
+.form-field:focus:-ms-input-placeholder {color: transparent;}
+
+.validatr-message {
+    display: none;
+}
+
+.invalid-field {
+    border: 1px solid #ff0000!important;
+}
+
+.custom-checkbox {
+    display: none;
+}
+.custom-checkbox-wrap {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.8125em;
+    color: #bbbbbb;
+}
+.custom-checkbox-wrap:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #e1e1e1;
+    margin-right: 20px;
+}
+.custom-checkbox:checked + .custom-checkbox-wrap:before {
+    background: url('../source/images/icon-ok.png') no-repeat center;
+    background-size: cover;
+}
+.custom-checkbox.invalid-field + .custom-checkbox-wrap:before {
+    border: 1px solid #ff0000;
+}
