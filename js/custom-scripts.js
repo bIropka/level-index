@@ -104,47 +104,6 @@ $(document).ready(function () {
         $(this).focus();
     });
 
-    /*******************************
-     ******* sliders scripts ********
-     ******************************/
-
-    $('.slider-logisticians').slick({
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1366,
-                settings: {
-                    slidesToShow: 5
-                }
-            },
-            {
-                breakpoint: 981,
-                settings: {
-                    slidesToShow: 4
-                }
-            },
-            {
-                breakpoint: 769,
-                settings: {
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 360,
-                settings: {
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
-
 });
 
 
@@ -189,6 +148,66 @@ $(document).ready(function () {
     $('.timer ul').downCount({
         date: dateForCounter,
         offset: +3
+    });
+
+});
+
+
+/*******************************
+ ******* sliders scripts *******
+ ******************************/
+
+$(document).ready(function () {
+
+    var sliderPartner = $('.slider-partner');
+
+    setTimeout(function(){
+        var currentPartnerSlides = $('.slider-partner').find('.slick-active');
+        $(currentPartnerSlides[currentPartnerSlides.length - 1]).addClass('slide-last');
+    }, 1000);
+
+    sliderPartner.slick({
+        slidesToShow: 5,
+        slidesToScroll: 1
+    });
+
+    sliderPartner.on('afterChange', function(event, slick, currentSlide){
+        $(this).find('.slick-active').removeClass('slide-last');
+        var array = $(this).find('.slick-active');
+        $(array[array.length - 1]).addClass('slide-last');
+    });
+
+    $('.slider-reviews').slick({
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 1366,
+                settings: {
+                }
+            },
+            {
+                breakpoint: 981,
+                settings: {
+                }
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                }
+            },
+            {
+                breakpoint: 360,
+                settings: {
+                }
+            }
+        ]
     });
 
 });

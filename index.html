@@ -11,102 +11,110 @@
 
 <nav>
 
-    <div class="burger"></div>
+    <div class="wrapper">
 
-    <ul>
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Почему мы</a></li>
-        <li><a href="#">Как мы работаем</a></li>
-        <li><a href="#">Наши предложения</a></li>
-        <li><a href="#">О компании</a></li>
-        <li><a href="#">Отзывы</a></li>
-        <li><a href="#">Контакты</a></li>
-    </ul>
+        <div class="burger"></div>
+
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Почему мы</a></li>
+            <li><a href="#">Как мы работаем</a></li>
+            <li><a href="#">Наши предложения</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+
+    </div>
 
 </nav>
 
 <header role="banner">
 
-    <div class="header-contacts">
+    <div class="wrapper">
 
-        <div class="logo"></div>
+        <div class="header-contacts">
 
-        <div class="callback">
+            <div class="logo"></div>
 
-            <a href="tel:+74951503389"><span>+7 (495)</span> 150-33-89</a>
+            <div class="callback">
 
-            <p>Заказать обратный звонок</p>
-            
+                <a href="tel:+74951503389"><span>+7 (495)</span> 150-33-89</a>
+
+                <p>Заказать обратный звонок</p>
+
+            </div>
+
+            <div class="write-us">
+
+                <p>info@shtukatur.im</p>
+
+                <a href="mailto:info@shtukatur.im">Написать нам</a>
+
+            </div>
+
         </div>
 
-        <div class="write-us">
+        <h1>Механизированное нанесение штукатурки за 1 день</h1>
 
-            <p>info@shtukatur.im</p>
+        <div class="moscow">в Москве и Московской области</div>
 
-            <a href="mailto:info@shtukatur.im">Написать нам</a>
+        <div class="timer">
+
+            <p>До конца акции:</p>
+
+            <ul>
+
+                <li> <span class="days">00</span>
+                    <p class="days_ref">дней</p>
+                </li>
+
+                <li class="seperator">:</li>
+
+                <li> <span class="hours">00</span>
+                    <p class="hours_ref">часов</p>
+                </li>
+
+                <li class="seperator">:</li>
+
+                <li> <span class="minutes">00</span>
+                    <p class="minutes_ref">минут</p>
+                </li>
+
+                <li class="seperator">:</li>
+
+                <li> <span class="seconds">00</span>
+                    <p class="seconds_ref">секунд</p>
+                </li>
+
+            </ul>
 
         </div>
 
-    </div>
+        <p>Выезд замерщика на объект — бесплатно!</p>
 
-    <h1>Механизированное нанесение штукатурки за 1 день</h1>
+        <p>Оставьте заявку и <span>сэкономьте до 2 500 рублей!</span></p>
 
-    <div class="moscow">в Москве и Московской области</div>
+        <form action="#" class="form-order">
 
-    <div class="timer">
+            <label class="form-field-wrap">
+                <input type="text" class="form-field" placeholder="Ваше имя">
+            </label>
 
-        <p>До конца акции:</p>
+            <label class="form-field-wrap">
+                <input type="text" class="form-field" placeholder="Ваш телефон">
+            </label>
 
-        <ul>
+            <button type="submit">Сделать заказ</button>
 
-            <li> <span class="days">00</span>
-                <p class="days_ref">дней</p>
-            </li>
+            <input type="checkbox" id="order-checkbox" class="custom-checkbox">
+            <label for="order-checkbox">
+                Даю согласие на обработку своих персональных данных в соответствии с соглашением по использованию сайта и <a href="#">Федеральным законом «О персональных данных»</a>
+            </label>
 
-            <li class="seperator">:</li>
-
-            <li> <span class="hours">00</span>
-                <p class="hours_ref">часов</p>
-            </li>
-
-            <li class="seperator">:</li>
-
-            <li> <span class="minutes">00</span>
-                <p class="minutes_ref">минут</p>
-            </li>
-
-            <li class="seperator">:</li>
-
-            <li> <span class="seconds">00</span>
-                <p class="seconds_ref">секунд</p>
-            </li>
-
-        </ul>
+        </form>
 
     </div>
-
-    <p>Выезд замерщика на объект — бесплатно!</p>
-
-    <p>Оставьте заявку и <span>сэкономьте до 2 500 рублей!</span></p>
-
-    <form action="#" class="form-order">
-
-        <label class="form-field-wrap">
-            <input type="text" class="form-field" placeholder="Ваше имя">
-        </label>
-
-        <label class="form-field-wrap">
-            <input type="text" class="form-field" placeholder="Ваш телефон">
-        </label>
-
-        <button type="submit">Сделать заказ</button>
-
-        <input type="checkbox" id="order-checkbox" class="custom-checkbox">
-        <label for="order-checkbox">
-            Даю согласие на обработку своих персональных данных в соответствии с соглашением по использованию сайта и <a href="#">Федеральным законом «О персональных данных»</a>
-        </label>
-
-    </form>
 
 </header>
 
@@ -340,52 +348,54 @@
 
 </section>
 
-<section class="partners">
+<section class="partner">
 
     <div class="wrapper">
 
         <h2>Наш партнёр — торговая марка «СТРОЙБРИГ»</h2>
 
-        <div class="logo-stroyberg"></div>
+        <div class="logo-stroyberg"><img src="source/images/logo-stroyberg.png" alt=""></div>
 
         <p>
-            Компания <span>«Уровень»</span> работает только с проверенными производителями модифицированных сухих строительных смесей, к которым относится торговая марка <span>«Стройбриг»</span>, выведенная на рынок в 2009 году. Её главное отличие от конкурентов — широкая продуктовая линейка <span>сухих строительных смесей</span>, предназначенных для механизированного нанесения. Задача торговой марки <span>«Стройбриг»</span> — обеспечение профессиональных строителей современными материалами и комплексными решениями, гарантирующими идеальный результат и максимальную экономическую и практическую выгоду — как для заказчика, так и для исполнителя.
+            Компания <span>«Уровень»</span> работает только с проверенными производителями модифицированных сухих строительных смесей, к которым относится торговая марка <span>«Стройбриг»</span>, выведенная на рынок в 2009 году. Её главное отличие от конкурентов — широкая продуктовая линейка <span>сухих строительных смесей</span>, предназначенных для механизированного нанесения. Задача торговой марки <span>«Стройбриг»</span> — обеспечение профессиональных строителей современными материалами и комплексными решениями,<br> гарантирующими идеальный результат и максимальную экономическую и практическую выгоду — как <br>для заказчика, так и для исполнителя.
         </p>
 
         <div class="slider-partner">
             <div class="slide">
-                <div class="partner-image"></div>
+                <div class="partner-image"><img src="source/images/image-partner-1.jpg" alt=""></div>
                 <div class="note">механическая обработка стен</div>
             </div>
             <div class="slide">
-                <div class="partner-image"></div>
+                <div class="partner-image"><img src="source/images/image-partner-2.jpg" alt=""></div>
                 <div class="note">механическая обработка стен</div>
             </div>
             <div class="slide">
-                <div class="partner-image"></div>
+                <div class="partner-image"><img src="source/images/image-partner-3.jpg" alt=""></div>
                 <div class="note">механическая обработка стен</div>
             </div>
             <div class="slide">
-                <div class="partner-image"></div>
+                <div class="partner-image"><img src="source/images/image-partner-4.jpg" alt=""></div>
                 <div class="note">механическая обработка стен</div>
             </div>
             <div class="slide">
-                <div class="partner-image"></div>
+                <div class="partner-image"><img src="source/images/image-partner-5.jpg" alt=""></div>
                 <div class="note">механическая обработка стен</div>
             </div>
             <div class="slide">
-                <div class="partner-image"></div>
+                <div class="partner-image"><img src="source/images/image-partner-3.jpg" alt=""></div>
                 <div class="note">механическая обработка стен</div>
             </div>
             <div class="slide">
-                <div class="partner-image"></div>
+                <div class="partner-image"><img src="source/images/image-partner-2.jpg" alt=""></div>
                 <div class="note">механическая обработка стен</div>
             </div>
             <div class="slide">
-                <div class="partner-image"></div>
+                <div class="partner-image"><img src="source/images/image-partner-5.jpg" alt=""></div>
                 <div class="note">механическая обработка стен</div>
             </div>
         </div>
+
+        <div class="partner-product"><img src="source/images/partner-product.png" alt=""></div>
 
     </div>
 
@@ -435,7 +445,9 @@
 
 <footer role="contentinfo">
 
-    <div class="footer-order">
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=bhzMuzNypvXSGp3ZVJblpqApLEp_4Qmq&amp;width=100%&amp;height=820&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=false"></script>
+
+     <div class="footer-order">
 
         <div class="wrapper">
 
@@ -469,7 +481,7 @@
 
             <p>Контактный телефон: <a href="tel:+74951503389">+7 (495) 150-33-89</a></p>
 
-            <p>Почта для запросов: <a href="mailto:info@shtukatur.im">info@shtukatur.im</a></p>
+            <p>Почта для запросов: <a href="mailto:info@shtukatur.im" class="email-link">info@shtukatur.im</a></p>
 
             <p class="working-time">Время работы: с 8.00 до 22.00 ежедневно</p>
 
