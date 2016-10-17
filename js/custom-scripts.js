@@ -4,6 +4,34 @@ $(document).ready(function () {
      ****** scroll scripts ********
      ******************************/
 
+    if ($(window).scrollTop() < $('#solutions').offset().top - 200) {
+        $('nav ul li.active').removeClass('active');
+        $('nav ul li:nth-child(1)').addClass('active');
+    }
+    else if ($(window).scrollTop() < $('#steps').offset().top - 200) {
+        $('nav ul li.active').removeClass('active');
+        $('nav ul li:nth-child(2)').addClass('active');
+    }
+    else if ($(window).scrollTop() < $('#offers').offset().top - 200) {
+        $('nav ul li.active').removeClass('active');
+        $('nav ul li:nth-child(3)').addClass('active');
+    }
+    else if ($(window).scrollTop() < $('#statistics').offset().top - 200) {
+        $('nav ul li.active').removeClass('active');
+        $('nav ul li:nth-child(4)').addClass('active');
+    }
+    else if ($(window).scrollTop() < $('#reviews').offset().top - 200) {
+        $('nav ul li.active').removeClass('active');
+        $('nav ul li:nth-child(5)').addClass('active');
+    }
+    else if ($(window).scrollTop() < $('#contacts').offset().top - 300) {
+        $('nav ul li.active').removeClass('active');
+        $('nav ul li:nth-child(6)').addClass('active');
+    } else {
+        $('nav ul li.active').removeClass('active');
+        $('nav ul li:nth-child(7)').addClass('active');
+    }
+
     $(window).scroll(function() {
 
         if ($(window).scrollTop() < $('#solutions').offset().top - 200) {
@@ -48,6 +76,13 @@ $(document).ready(function () {
         return false;
     });
 
+    /*******************************
+     ******* other scripts *********
+     ******************************/
+    $('.burger').click(function() {
+        $(this).toggleClass('active');
+        $(this).siblings('ul').slideToggle();
+    });
 
     /*******************************
      ******* forms scripts *********
@@ -205,7 +240,21 @@ $(document).ready(function () {
 
     sliderPartner.slick({
         slidesToShow: 5,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 981,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 3
+                }
+            }
+        ]
     });
 
     sliderPartner.on('afterChange', function(event, slick, currentSlide){
@@ -220,28 +269,9 @@ $(document).ready(function () {
         dots: true,
         responsive: [
             {
-                breakpoint: 1366,
-                settings: {
-                }
-            },
-            {
-                breakpoint: 981,
-                settings: {
-                }
-            },
-            {
                 breakpoint: 769,
                 settings: {
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                }
-            },
-            {
-                breakpoint: 360,
-                settings: {
+                    slidesToShow: 1
                 }
             }
         ]
