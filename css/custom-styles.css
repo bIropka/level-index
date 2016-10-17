@@ -302,9 +302,9 @@ header, footer {
 }
 .steps {
     position: absolute;
-    bottom: -130px;
+    bottom: -120px;
     right: 0;
-    width: 600px;
+    width: 590px;
     background: #c22726;
     padding: 0 40px 20px;
 }
@@ -313,7 +313,7 @@ header, footer {
     display: block;
     width: 0;
     height: 0;
-    border-left: 600px solid transparent;
+    border-left: 590px solid transparent;
     border-bottom: 60px solid #c22726;
     position: absolute;
     left: 0;
@@ -324,7 +324,7 @@ header, footer {
     display: block;
     width: 0;
     height: 0;
-    border-right: 600px solid transparent;
+    border-right: 590px solid transparent;
     border-top: 60px solid #c22726;
     position: absolute;
     left: 0;
@@ -333,15 +333,32 @@ header, footer {
 .steps h2 {
     text-align: right;
     color: #fdae1e;
+    margin-bottom: 40px;
 }
 .steps h2 span {
     display: block;
     color: #ffffff;
 }
+.steps ul {
+    counter-reset: li;
+}
 .steps li {
     width: 100%;
-    padding-left: 85px;
+    padding-left: 90px;
     position: relative;
+}
+.steps li:before {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: #fdb01c;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: -15px;
 }
 .steps li:after {
     content: '';
@@ -358,17 +375,180 @@ header, footer {
 .steps li p {
     color: #ffffff;
 }
+.steps li p:before {
+    content: counter(li);
+    counter-increment: li;
+    font-family: "NotoSans Bold", sans-serif;
+    font-size: 3.333333333333333em;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: -18px;
+    top: -22px;
+}
+.steps li p:after {
+    content: '';
+    display: block;
+    width: 59px;
+    background: transparent url('../source/images/spryte-steps.png') no-repeat;
+    position: absolute;
+    left: 20px;
+    top: 0;
+}
+.steps li:nth-child(1) p:after {
+    background-position: 0 0;
+    height: 38px;
+}
+.steps li:nth-child(2) p:after {
+    background-position: 0 -83px;
+    top: -5px;
+    left: 22px;
+    height: 52px;
+}
+.steps li:nth-child(3) p:after {
+    background-position: 0 -171px;
+    height: 50px;
+    top: -5px;
+}
+.steps li:nth-child(4) p:after {
+    background-position: 0 -266px;
+    height: 55px;
+}
+.steps li:nth-child(5) p:after {
+    background-position: 0 -354px;
+    height: 49px;
+    left: 25px;
+}
+.steps li:nth-child(6) p:after {
+    background-position: 0 bottom;
+    height: 41px;
+}
+
 /******************************
 ********** offers *************
 ******************************/
-
+.offers {
+    padding: 10px 0 70px;
+}
+.offers h2 {
+    margin-bottom: 10px;
+}
+.offers h2 span {
+    display: block;
+    color: #c22726;
+}
+.offers .note {
+    font-family: "NotoSans Italic", sans-serif;
+    font-size: 0.9333333333333333em;
+}
+.offers ul {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+.offers ul li {
+    vertical-align: top;
+    width: 100%;
+    max-width: 330px;
+    min-width: 300px;
+    margin: 35px;
+}
+.offer-image {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background: #ffffff;
+    border: 2px solid #efefef;
+    margin-bottom: 15px;
+}
+.offer-image:before {
+    content: '';
+    display: block;
+    width: 85%;
+    height: 85%;
+    position: absolute;
+    left: 7.5%;
+    top: 7.5%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    z-index: 1;
+}
+.offers li:nth-child(1) .offer-image:before {
+    background: url('../source/images/image-offer-1.png') no-repeat center;
+    background-size: cover;
+}
+.offers li:nth-child(2) .offer-image:before {
+    background: url('../source/images/image-offer-2.png') no-repeat center;
+    background-size: cover;
+}
+.offers li:nth-child(3) .offer-image:before {
+    background: url('../source/images/image-offer-3.png') no-repeat center;
+    background-size: cover;
+}
+.offers ul li h3 {
+    color: #885a00;
+}
+.offers ul li .line {
+    width: 100%;
+    height: 1px;
+    background: #885a00;
+    position: relative;
+    margin: 20px 0;
+}
+.offers ul li .line:before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #ffffff url('../source/images/offer-decor.png') no-repeat center;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: -20px;
+    z-index: 1;
+}
+.offers ul li .sub-title {
+    font-family: "NotoSans Bold", sans-serif;
+    font-size: 0.9333333333333333em;
+}
+.offers ul li p {
+    font-size: 0.9333333333333333em;
+}
+.step-cost {
+    margin-top: 20px;
+    border: 2px dashed #a1a1a1;
+    text-align: center;
+    padding: 15px 0;
+}
+.offers .step-cost p {
+    color: #c22726;
+    font-size: 1.8em;
+    font-family: "NotoSans Bold", sans-serif;
+}
+.offers .step-cost .note{
+    color: inherit;
+    font-family: "NotoSans Italic", sans-serif;
+    font-size: 0.9333333333333333em;
+}
 /******************************
-***
-******* call-us ************
+********** call-us ************
 ******************************/
 .call-us {
     background: #eef0ed;
 }
+.call-us:before {
+    content: '';
+    display: block;
+    width: 100%;
+    background: url('../source/images/background-statistics-top.png') no-repeat center;
+    position: relative;
+}
+.
 /******************************
 ********* statistics **********
 ******************************/
