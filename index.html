@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Уровень - отделочные работы</title>
@@ -17,20 +17,20 @@
         <div class="burger"></div>
 
         <ul>
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Почему мы</a></li>
-            <li><a href="#">Как мы работаем</a></li>
-            <li><a href="#">Наши предложения</a></li>
-            <li><a href="#">О компании</a></li>
-            <li><a href="#">Отзывы</a></li>
-            <li><a href="#">Контакты</a></li>
+            <li><a href="#header">Главная</a></li>
+            <li><a href="#solutions">Почему мы</a></li>
+            <li><a href="#steps">Как мы работаем</a></li>
+            <li><a href="#offers">Наши предложения</a></li>
+            <li><a href="#statistics">О компании</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#contacts">Контакты</a></li>
         </ul>
 
     </div>
 
 </nav>
 
-<header role="banner">
+<header role="banner" id="header">
 
     <div class="wrapper">
 
@@ -48,9 +48,9 @@
 
             <div class="write-us">
 
-                <p>info@shtukatur.im</p>
+                <a href="mailto:info@shtukatur.im">info@shtukatur.im</a>
 
-                <a href="mailto:info@shtukatur.im">Написать нам</a>
+                <p>Написать нам</p>
 
             </div>
 
@@ -64,48 +64,24 @@
 
             <p>До конца акции:</p>
 
+            <p>До конца акции осталось</p>
+
             <div class="timer"></div>
-
-            <!--<ul>
-
-                <li> <span class="days">00</span>
-                    <p class="days_ref">дней</p>
-                </li>
-
-                <li class="seperator">:</li>
-
-                <li> <span class="hours">00</span>
-                    <p class="hours_ref">часов</p>
-                </li>
-
-                <li class="seperator">:</li>
-
-                <li> <span class="minutes">00</span>
-                    <p class="minutes_ref">минут</p>
-                </li>
-
-                <li class="seperator">:</li>
-
-                <li> <span class="seconds">00</span>
-                    <p class="seconds_ref">секунд</p>
-                </li>
-
-            </ul>-->
 
         </div>
 
-        <p>Выезд замерщика на объект — бесплатно!</p>
+        <p class="tagline">Выезд замерщика на объект — бесплатно!</p>
 
-        <p>Оставьте заявку и <span>сэкономьте до 2 500 рублей!</span></p>
+        <p class="tagline">Оставьте заявку и <span>сэкономьте до 2 500 рублей!</span></p>
 
         <form action="#" class="form-order" id="form-order-1">
 
             <label class="form-field-wrap name-wrap">
-                <input type="text" class="form-field" placeholder="Ваше имя">
+                <input type="text" id="order-1-name" name="order-1-name" pattern="^[А-Яа-я]+$" class="form-field" placeholder="Ваше имя:" required/>
             </label>
 
-            <label class="form-field-wrap phone-wrap">
-                <input type="text" class="form-field" placeholder="Ваш телефон">
+            <label class="form-field-wrap tel-wrap">
+                <input type="tel" id="order-1-tel" name="order-1-tel" class="form-field" placeholder="Ваш телефон" required/>
             </label>
 
             <button type="submit">сделать заказ</button>
@@ -121,7 +97,7 @@
 
 </header>
 
-<section class="problems">
+<section class="problems" id="problems">
 
     <div class="wrapper">
 
@@ -154,7 +130,7 @@
 
 </section>
 
-<section class="solutions">
+<section class="solutions" id="solutions">
 
     <div class="wrapper">
 
@@ -187,7 +163,7 @@
             </li>
         </ul>
 
-        <div class="steps">
+        <div class="steps" id="steps">
 
             <h2><span>Шесть простых шагов</span> к идеальным стенам в вашем доме!</h2>
 
@@ -218,7 +194,7 @@
 
 </section>
 
-<section class="offers">
+<section class="offers" id="offers">
 
     <div class="wrapper">
 
@@ -270,7 +246,7 @@
 
 </section>
 
-<section class="call-us">
+<section class="call-us" id="call-us" >
 
     <div class="wrapper">
 
@@ -294,11 +270,11 @@
         <form action="#" class="form-order" id="form-order-2">
 
             <label class="form-field-wrap name-wrap">
-                <input type="text" class="form-field" placeholder="Ваше имя">
+                <input type="text" id="order-2-name" name="order-1-name"  pattern="^[А-Яа-я]+$" class="form-field" placeholder="Ваше имя:" required/>
             </label>
 
-            <label class="form-field-wrap phone-wrap">
-                <input type="text" class="form-field" placeholder="Ваш телефон">
+            <label class="form-field-wrap tel-wrap">
+                <input type="tel" id="order-2-tel" name="order-1-tel" class="form-field" placeholder="Ваш телефон" required/>
             </label>
 
             <button type="submit">Вызвать замерщика</button>
@@ -314,7 +290,7 @@
 
 </section>
 
-<section class="statistics">
+<section class="statistics" id="statistics">
 
     <div class="wrapper">
 
@@ -351,7 +327,7 @@
 
 </section>
 
-<section class="partner">
+<section class="partner" id="partner">
 
     <div class="wrapper">
 
@@ -404,7 +380,7 @@
 
 </section>
 
-<section class="reviews">
+<section class="reviews" id="reviews">
 
     <div class="wrapper">
 
@@ -446,7 +422,7 @@
 
 </section>
 
-<footer role="contentinfo">
+<footer role="contentinfo" id="contacts">
 
     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=bhzMuzNypvXSGp3ZVJblpqApLEp_4Qmq&amp;width=100%&amp;height=820&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=false"></script>
 
@@ -461,11 +437,11 @@
             <form action="#" class="form-order" id="form-order-3">
 
                 <label class="form-field-wrap name-wrap">
-                    <input type="text" class="form-field" placeholder="Ваше имя">
+                    <input type="text" id="order-3-name" name="order-1-name" pattern="^[А-Яа-я]+$" class="form-field" placeholder="Ваше имя:" required/>
                 </label>
 
-                <label class="form-field-wrap phone-wrap">
-                    <input type="text" class="form-field" placeholder="Ваш телефон">
+                <label class="form-field-wrap tel-wrap">
+                    <input type="tel" id="order-3-tel" name="order-1-tel" class="form-field" placeholder="Ваш телефон" required/>
                 </label>
 
                 <button type="submit">оставить заявку</button>
@@ -494,9 +470,72 @@
 
 </footer>
 
+<div class="window window-callback">
+
+    <form action="mail-callback.php" id="form-callback">
+
+        <div class="close-marker">&#10006;</div>
+
+        <p class="title">Заказать обратный звонок</p>
+
+        <label class="form-field-wrap"><input type="tel" id="callback-tel" name="callback-tel" class="form-field" placeholder="Ваш телефон" required/></label>
+
+        <button type="submit" class="order form-submit">Заказать звонок</button>
+
+    </form>
+
+</div>
+
+<div class="window window-write-us">
+
+    <form action="mail-callback.php" id="form-write-us">
+
+        <div class="close-marker">&#10006;</div>
+
+        <p class="title">Написать нам</p>
+
+        <label class="form-field-wrap">
+            <input type="text" id="write-us-name" name="write-us-name" pattern="^[А-Яа-я]+$" class="form-field" placeholder="Ваше имя" required/>
+        </label>
+
+        <label class="form-field-wrap">
+            <input type="tel" id="write-us-tel" name="write-us-tel" class="form-field" placeholder="Ваш телефон" required/>
+        </label>
+
+        <label class="form-field-wrap">
+            <input type="text" id="write-us-city" name="write-us-city" class="form-field" placeholder="Ваш город" required/>
+        </label>
+
+        <label class="form-field-wrap">
+            <input type="email" id="write-us-email" name="write-us-email" class="form-field" placeholder="Ваш email" required/>
+        </label>
+
+        <label class="form-field-wrap form-textarea-wrap">
+            <textarea id="write-us-comment" name="write-us-comment" class="form-field form-textarea" placeholder="Ваше сообщение" required></textarea>
+        </label>
+
+        <button type="submit" class="order form-submit">Отправить сообщение</button>
+
+    </form>
+
+</div>
+
+<div class="window window-successful">
+    <div class="message-successful">
+        <p class="title">Сообщение отправлено!</p>
+        <button>OK</button>
+    </div>
+</div>
+
+<div class="window window-error">
+    <div class="message-error">
+        <p class="title">Ваше сообщение не отправлено!<br>Попробуйте еще раз!</p>
+        <button>OK</button>
+    </div>
+</div>
+
 <script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/flipclock.min.js"></script>
-<script src="js/jquery.maskedinput.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/validatr.min.js"></script>
 <script src="js/custom-scripts.js"></script>

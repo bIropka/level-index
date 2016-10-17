@@ -1,22 +1,53 @@
 $(document).ready(function () {
 
     /******************************
-     ******* init scripts *********
+     ****** scroll scripts ********
      ******************************/
 
-    if ($(window).width() < '992'){
+    $(window).scroll(function() {
 
-    } else {
-
-    }
-
-    $(window).resize(function(){
-        if ($(window).width() < '992'){
-
-        } else {
-
+        if ($(window).scrollTop() < $('#solutions').offset().top - 200) {
+            $('nav ul li.active').removeClass('active');
+            $('nav ul li:nth-child(1)').addClass('active');
         }
+        else if ($(window).scrollTop() < $('#steps').offset().top - 200) {
+            $('nav ul li.active').removeClass('active');
+            $('nav ul li:nth-child(2)').addClass('active');
+        }
+        else if ($(window).scrollTop() < $('#offers').offset().top - 200) {
+            $('nav ul li.active').removeClass('active');
+            $('nav ul li:nth-child(3)').addClass('active');
+        }
+        else if ($(window).scrollTop() < $('#statistics').offset().top - 200) {
+            $('nav ul li.active').removeClass('active');
+            $('nav ul li:nth-child(4)').addClass('active');
+        }
+        else if ($(window).scrollTop() < $('#reviews').offset().top - 200) {
+            $('nav ul li.active').removeClass('active');
+            $('nav ul li:nth-child(5)').addClass('active');
+        }
+        else if ($(window).scrollTop() < $('#contacts').offset().top - 300) {
+            $('nav ul li.active').removeClass('active');
+            $('nav ul li:nth-child(6)').addClass('active');
+        } else {
+            $('nav ul li.active').removeClass('active');
+            $('nav ul li:nth-child(7)').addClass('active');
+        }
+
+
     });
+
+    $('a[href^="#"]').click(function(){
+        $('nav ul li a').removeClass('active');
+        $(this).addClass('active');
+        if ($(window).width() < '981'){
+            $('.burger').removeClass('active');
+        }
+        var target = $(this).attr('href');
+        $('html, body').animate({scrollTop: $(target).offset().top - 100}, 600);
+        return false;
+    });
+
 
     /*******************************
      ******* forms scripts *********
@@ -51,7 +82,7 @@ $(document).ready(function () {
         });
     });
 
-    $('.form-submit').click(function() {
+    $('button[type="submit"]').click(function() {
         $(this).parents('form').find('.form-field:invalid').addClass('invalid-field');
         if(document.getElementById('order-checkbox').checked) {
             document.getElementById('order-checkbox').classList.remove('invalid-field');
@@ -66,7 +97,7 @@ $(document).ready(function () {
      ******* other scripts ********
      ******************************/
 
-    $('.callback').click(function () {
+    $('.callback p').click(function () {
         $('.window-callback').fadeIn();
     });
     $('.window-callback').click(function (event) {
@@ -74,6 +105,16 @@ $(document).ready(function () {
         if (!$target.closest($('#form-callback')).length) $('.window-callback').fadeOut();
         if ($target.hasClass('close-marker')) $('.window-callback').fadeOut();
     });
+
+    $('.write-us p').click(function () {
+        $('.window-write-us').fadeIn();
+    });
+    $('.window-write-us').click(function (event) {
+        $target = $(event.target);
+        if (!$target.closest($('#form-write-us')).length) $('.window-write-us').fadeOut();
+        if ($target.hasClass('close-marker')) $('.window-write-us').fadeOut();
+    });
+    
     $('.window-successful').click(function (event) {
         $target = $(event.target);
         if (!$target.closest($('.message-successful')).length) $('.window-successful').fadeOut();
@@ -92,16 +133,14 @@ $(document).ready(function () {
         $('.window-callback').fadeOut();
     });
 
+    $('textarea').on('focus', function() {
+        $(this).removeClass('valid-field invalid-field');
+    });
     $('input').on('focus', function() {
         $(this).removeClass('valid-field invalid-field');
     });
     $('input[type="checkbox"]').on('change', function() {
         $(this).removeClass('valid-field invalid-field');
-    });
-
-    $('input[type="tel"]').mask("+7 ( 999 ) 999 - 99 - 99");
-    $('input[type="tel"]').click(function() {
-        $(this).focus();
     });
 
 });
@@ -121,45 +160,32 @@ $(document).ready(function () {
         countdown: true,
         language: 'ru'
     });
-    timer.setTime(360);
-
-
+    timer.setTime(dateForCounter);
 
 
     function getDateForCounter() {
 
         var date = + new Date();
         date = parseInt(date / 86400000);
+        var daysFromStart = date % 5;
 
         var currentDate = new Date();
         var currentDay = currentDate.getDate();
-        var currentMonth, currentYear;
 
-        if (date % 2) {
+        if (daysFromStart === 0) {
             currentDay += 1;
         } else {
-            currentDay += 2;
+            currentDay += 5 - daysFromStart;
         }
         currentDate.setDate(currentDay);
+        currentDate.setHours(0);
+        currentDate.setMinutes(0);
+        currentDate.setSeconds(0);
+        currentDate.setMilliseconds(0);
 
-        currentDay = currentDate.getDate();
-
-        currentMonth = currentDate.getMonth();
-        ++currentMonth;
-        if (currentMonth != 12) {
-            currentMonth = '0' + currentMonth;
-        }
-
-        currentYear = currentDate.getFullYear();
-
-        return '' + currentMonth + '/' + currentDay + '/' + currentYear + ' 00:00:00';
+        return currentDate;
 
     }
-
-    /*$('.timer ul').downCount({
-        date: dateForCounter,
-        offset: +3
-    });*/
 
 });
 

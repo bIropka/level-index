@@ -93,7 +93,7 @@ h1 {
     font-weight: 100;
     line-height: 1.2;
     text-transform: uppercase;
-    margin: 35px 0 30px;
+    margin: 35px 0 15px;
 }
 
 h2 {
@@ -194,7 +194,7 @@ header, footer {
     width: 330px;
     background: #ffffff url('../source/images/icon-user.png') no-repeat 305px center;
 }
-.form-order .phone-wrap {
+.form-order .tel-wrap {
     width: 300px;
     background: #ffffff url('../source/images/icon-phone.png') no-repeat 275px center;
 }
@@ -205,7 +205,7 @@ header, footer {
     height: 50px;
     padding-left: 25px;
 }
-.form-order button[type='submit'] {
+button {
     display: block;
     float: left;
     width: 255px;
@@ -218,7 +218,7 @@ header, footer {
     color: inherit;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
-.form-order button[type='submit']:hover {
+button:hover {
     color: #333333;
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
 }
@@ -267,21 +267,28 @@ header, footer {
     border: 1px solid #c22726;
 }
 .invalid-field {
-    border: 1px solid #c22726!important;
+    border: none;
+    border-bottom: 1px solid #ff0000!important;
 }
 
 nav {
     display: block;
     width: 100%;
     background: #ffffff;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10;
     text-align: right;
     padding: 25px 0 15px;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
 }
+
 nav:after {
     content: '';
     display: block;
@@ -297,19 +304,40 @@ nav ul li {
     margin: 0 5px;
 }
 nav ul li a {
+    display: block;
     font-family: "NotoSans Bold", sans-serif;
     font-size: 1.266666666666667em;
     line-height: 1;
+    position: relative;
+}
+nav ul li a:after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: #fdae1e;
+    position: absolute;
+    left: 51%;
+    right: 51%;
+    bottom: -10px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
 }
 nav ul li a:hover {
     text-decoration: none;
+}
+nav ul li.active a:after {
+    left: 0;
+    right: 0;
 }
 /******************************
 ********** header ************
 ******************************/
 header[role='banner'] {
-    background: #e5decb url('../source/images/man-header.png') no-repeat center top;
-    background-size: cover;
+    background: #e5decb url('../source/images/man-header.png') no-repeat center 50px;
+    background-size: auto;
     padding: 140px 0 45px;
 }
 .logo {
@@ -364,9 +392,13 @@ header[role='banner'] {
     font-family: "NotoSans Bold", sans-serif;
     font-size: 1.333333333333333em;
     text-decoration: underline;
+    cursor:pointer;
 }
 .header-contacts .write-us a {
     line-height: 1.6;
+}
+.header-contacts .write-us p:hover {
+    text-decoration: none;
 }
 .header-contacts .write-us a:hover {
     text-decoration: none;
@@ -374,6 +406,7 @@ header[role='banner'] {
 
 .moscow {
     display: inline-block;
+    vertical-align: middle;
     width: 562px;
     height: 70px;
     font-size: 1.466666666666667em;
@@ -383,36 +416,69 @@ header[role='banner'] {
     background: transparent url('../source/images/spot.png') no-repeat center;
     background-size: cover;
     padding-right: 80px;
+    margin-left: -30px;
+}
+.timer-wrap {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.timer-wrap:after {
+    content: '';
+    display: block;
+    width: 63px;
+    height: 116px;
+    background: transparent url('../source/images/arrow.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 80%;
+    right: -30px;
+}
+.timer-wrap p {
+    font-family: "NotoSans Bold", sans-serif;
+    font-size: 0.9333333333333333em;
+    text-transform: uppercase;
 }
 .flip-clock-wrapper ul {
-    position: relative;
-    float: left;
     margin: 5px 2px;
     width: 35px;
     height: 42px;
     font-size: 20px;
-    font-weight: bold;
     line-height: 20px;
-    border-radius: 6px;
-    background: #000;
 }
 
 .flip-clock-divider {
-    float: left;
-    display: inline-block;
-    position: relative;
     width: 10px;
     height: 35px;
 }
 .flip-clock-dot {
-    display: block;
-    background: #323434;
     width: 7px;
     height: 7px;
-    position: absolute;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     left: 2px;
+}
+.flip-clock-divider .flip-clock-label {
+    top: auto;
+    bottom: -35px;
+    display: block;
+    text-align: center;
+}
+.flip-clock-divider.days .flip-clock-label {
+    left: 20px;
+    right: auto;
+}
+.flip-clock-divider.hours .flip-clock-label {
+    left: 30px;
+    right: auto;
+}
+.flip-clock-divider.minutes .flip-clock-label {
+    left: 30px;
+    right: auto;
+}
+.flip-clock-divider.seconds .flip-clock-label {
+    left: 25px;
+    right: auto;
 }
 .flip-clock-dot.top {
     top: 30px;
@@ -421,28 +487,26 @@ header[role='banner'] {
     bottom: 10px;
 }
 .flip-clock-wrapper ul li a div {
-    z-index: 1;
-    position: absolute;
     left: 0;
-    width: 100%;
-    height: 50%;
     font-size: 30px;
-    overflow: hidden;
-    outline: 1px solid transparent;
 }
 .flip-clock-wrapper ul li a div div.inn {
-    position: absolute;
     left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 200%;
-    color: #ccc;
-    text-shadow: 0 1px 2px #000;
-    text-align: center;
-    background-color: #333;
-    border-radius: 6px;
     font-size: 30px;
-
+}
+header .tagline {
+    font-family: "NotoSans Bold", sans-serif;
+    font-size: 2.266666666666667em;
+    line-height: 1.1;
+}
+header .tagline span {
+    font-family: "NotoSans Bold", sans-serif;
+    font-size: inherit;
+    color: #c22726;
+    line-height: 1.1;
+}
+header .form-order {
+    margin-top: 30px;
 }
 
 
@@ -1181,4 +1245,118 @@ footer .form-order {
     font-family: "NotoSans Bold", sans-serif;
     text-transform: uppercase;
     margin-top: 10px;
+}
+
+/******************************
+********** modals *************
+******************************/
+.window {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    text-align: left;
+    z-index: 100;
+    overflow: auto;
+}
+.window-successful {
+    display: block;
+}
+#form-callback, #form-write-us, .message-error, .message-successful {
+    position: absolute;
+    width: 410px;
+    height: 550px;
+    padding: 20px 30px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    z-index: 101;
+}
+#form-callback {
+    height: 210px;
+}
+.message-successful {
+    width: 320px;
+    height: 130px;
+}
+.message-error {
+    width: 320px;
+    height: 150px;
+}
+.window .message-successful .title, .window .message-error .title {
+    font-size: 0.9em;
+}
+.close-marker {
+    display: block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #ffffff;
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -ms-transition: 0.8s;
+    -o-transition: 0.8s;
+    transition: 0.8s;
+    position: absolute;
+    top: -25px;
+    right: 0;
+    cursor: pointer;
+    background: #c22726;
+    font-size: 1.2em;
+    font-family: "NotoSans Bold", sans-serif;
+}
+.close-marker:hover {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.window .title {
+    font-family: "NotoSans Bold", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.466666666666667em;
+    color: #c22726;
+    margin-bottom: 15px;
+}
+.window .form-field-wrap {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.window .form-field-wrap:after {
+    width: 11px;
+    height: 50px;
+    background: transparent url('../source/images/form-decor-smooth.png') no-repeat center;
+    background-size: auto;
+    right: 0;
+}
+.window .form-field {
+    height: 50px;
+    width: calc(100% - 11px);
+    border: 1px solid #bdbdbd;
+    border-right: none;
+    padding: 0 20px;
+}
+.window button {
+    width: 100%;
+    height: 50px;
+}
+.window textarea.form-field {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #bdbdbd;
+    resize: none;
+    padding-top: 10px;
+}
+.window .form-textarea-wrap:after {
+    display: none;
 }
