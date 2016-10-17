@@ -115,6 +115,17 @@ $(document).ready(function () {
 
     var dateForCounter = getDateForCounter();
 
+    var timer = $('.timer').FlipClock(3600, {
+
+        clockFace: 'DailyCounter',
+        countdown: true,
+        language: 'ru'
+    });
+    timer.setTime(360);
+
+
+
+
     function getDateForCounter() {
 
         var date = + new Date();
@@ -145,10 +156,10 @@ $(document).ready(function () {
 
     }
 
-    $('.timer ul').downCount({
+    /*$('.timer ul').downCount({
         date: dateForCounter,
         offset: +3
-    });
+    });*/
 
 });
 

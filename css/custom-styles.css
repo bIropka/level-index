@@ -51,11 +51,6 @@ html, body {
 
 a, button, input[type="submit"], input[type="cancel"], input[type="reset"] {
     cursor: pointer;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
     -webkit-appearance: none;
 }
 
@@ -98,6 +93,7 @@ h1 {
     font-weight: 100;
     line-height: 1.2;
     text-transform: uppercase;
+    margin: 35px 0 30px;
 }
 
 h2 {
@@ -159,44 +155,295 @@ header, footer {
 .form-field:focus::-moz-placeholder {color: transparent;}
 .form-field:focus:-moz-placeholder {color: transparent;}
 .form-field:focus:-ms-input-placeholder {color: transparent;}
+.form-field::-webkit-input-placeholder {color: #000000;}
+.form-field::-moz-placeholder {color: #000000;}
+.form-field:-moz-placeholder {color: #000000;}
+.form-field:-ms-input-placeholder {color: #000000;}
 
 .validatr-message {
     display: none;
 }
 
-.invalid-field {
-    border: 1px solid #ff0000!important;
+.form-order {
+    display: inline-block;
 }
-
-.custom-checkbox {
+.form-order:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.form-field-wrap {
+    display: block;
+    float: left;
+    padding-right: 40px;
+    position: relative;
+}
+.form-field-wrap:after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 50px;
+    background: transparent url('../source/images/form-decor.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: -15px;
+    z-index: 1;
+}
+.form-order .name-wrap {
+    width: 330px;
+    background: #ffffff url('../source/images/icon-user.png') no-repeat 305px center;
+}
+.form-order .phone-wrap {
+    width: 300px;
+    background: #ffffff url('../source/images/icon-phone.png') no-repeat 275px center;
+}
+.form-order .form-field {
+    display: block;
+    border: none;
+    width: 100%;
+    height: 50px;
+    padding-left: 25px;
+}
+.form-order button[type='submit'] {
+    display: block;
+    float: left;
+    width: 255px;
+    height: 50px;
+    background: transparent url('../source/images/submit-background.png') no-repeat center;
+    background-size: cover;
+    font-size: 1.133333333333333em;
+    font-family: "NotoSans Bold", sans-serif;
+    text-transform: uppercase;
+    color: inherit;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.form-order button[type='submit']:hover {
+    color: #333333;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+}
+.form-order .custom-checkbox {
     display: none;
 }
-.custom-checkbox-wrap {
+.form-order .custom-checkbox-label {
     display: inline-block;
+    width: 100%;
     vertical-align: middle;
-    font-size: 0.8125em;
-    color: #bbbbbb;
+    font-family: "NotoSans Italic", sans-serif;
+    font-size: 0.9333333333333333em;
+    margin-top: 50px;
+    line-height: 1;
+    position: relative;
+    padding-left: 45px;
 }
-.custom-checkbox-wrap:before {
+.form-order .custom-checkbox-label a {
+    font-size: inherit;
+    font-family: "NotoSans Italic", sans-serif;
+    color: #c22726;
+    line-height: 1;
+    text-decoration: underline;
+}
+.form-order .custom-checkbox-label a:hover {
+    text-decoration: none;
+}
+.form-order .custom-checkbox-label:before {
     content: '';
     display: inline-block;
     vertical-align: middle;
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     border: 1px solid #e1e1e1;
-    margin-right: 20px;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
 }
-.custom-checkbox:checked + .custom-checkbox-wrap:before {
-    background: url('../source/images/icon-ok.png') no-repeat center;
-    background-size: cover;
+.form-order .custom-checkbox:checked + .custom-checkbox-label:before {
+    background: #ffffff url('../source/images/icon-ok-small.png') no-repeat center;
+    background-size: 80% auto;
 }
-.custom-checkbox.invalid-field + .custom-checkbox-wrap:before {
-    border: 1px solid #ff0000;
+.form-order .custom-checkbox.invalid-field + .custom-checkbox-label:before {
+    border: 1px solid #c22726;
+}
+.invalid-field {
+    border: 1px solid #c22726!important;
 }
 
+nav {
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    text-align: right;
+    padding: 25px 0 15px;
+}
+nav:after {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 2.55%;
+    background: url('../source/images/nav-decor.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+nav ul li {
+    margin: 0 5px;
+}
+nav ul li a {
+    font-family: "NotoSans Bold", sans-serif;
+    font-size: 1.266666666666667em;
+    line-height: 1;
+}
+nav ul li a:hover {
+    text-decoration: none;
+}
 /******************************
 ********** header ************
 ******************************/
+header[role='banner'] {
+    background: #e5decb url('../source/images/man-header.png') no-repeat center top;
+    background-size: cover;
+    padding: 140px 0 45px;
+}
+.logo {
+    display: block;
+    width: 288px;
+    height: 182px;
+    background: url('../source/images/logo.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: -110px;
+    left: 25px;
+    z-index: 11;
+}
+.header-contacts {
+    display: inline-block;
+    margin-left: 350px;
+}
+.header-contacts .callback, .header-contacts .write-us {
+    display: inline-block;
+}
+.header-contacts .callback a {
+    display: block;
+    font-size: 2em;
+}
+.header-contacts .callback a:hover {
+    text-decoration: none;
+}
+.header-contacts .callback a:hover span {
+    color: inherit;
+}
+.header-contacts .callback a span {
+    font-size: inherit;
+    color: #735405;
+}
+.header-contacts .callback p {
+    display: inline-block;
+    font-family: "NotoSans Bold", sans-serif;
+    color: #735405;
+    font-size: 1.066666666666667em;
+    cursor: pointer;
+    border-bottom: 1px dashed #735405;
+    text-align: justify;
+}
+.header-contacts .callback p:hover {
+    border-bottom: 1px dashed transparent;
+}
+.header-contacts .write-us {
+    margin-left: 50px;
+    padding-left: 50px;
+}
+.header-contacts .write-us p, .header-contacts .write-us a {
+    font-family: "NotoSans Bold", sans-serif;
+    font-size: 1.333333333333333em;
+    text-decoration: underline;
+}
+.header-contacts .write-us a {
+    line-height: 1.6;
+}
+.header-contacts .write-us a:hover {
+    text-decoration: none;
+}
+
+.moscow {
+    display: inline-block;
+    width: 562px;
+    height: 70px;
+    font-size: 1.466666666666667em;
+    line-height: 70px;
+    color: #ffffff;
+    text-align: right;
+    background: transparent url('../source/images/spot.png') no-repeat center;
+    background-size: cover;
+    padding-right: 80px;
+}
+.flip-clock-wrapper ul {
+    position: relative;
+    float: left;
+    margin: 5px 2px;
+    width: 35px;
+    height: 42px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    border-radius: 6px;
+    background: #000;
+}
+
+.flip-clock-divider {
+    float: left;
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 35px;
+}
+.flip-clock-dot {
+    display: block;
+    background: #323434;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    left: 2px;
+}
+.flip-clock-dot.top {
+    top: 30px;
+}
+.flip-clock-dot.bottom {
+    bottom: 10px;
+}
+.flip-clock-wrapper ul li a div {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    font-size: 30px;
+    overflow: hidden;
+    outline: 1px solid transparent;
+}
+.flip-clock-wrapper ul li a div div.inn {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 200%;
+    color: #ccc;
+    text-shadow: 0 1px 2px #000;
+    text-align: center;
+    background-color: #333;
+    border-radius: 6px;
+    font-size: 30px;
+
+}
 
 
 /******************************
@@ -539,16 +786,66 @@ header, footer {
 ********** call-us ************
 ******************************/
 .call-us {
-    background: #eef0ed;
+    background: #eef0ed url('../source/images/call-us-decor.png') no-repeat left top;
+    position: relative;
+    padding-top: 30px;
+}
+.call-us .wrapper {
+    padding-bottom: 120px;
+    background: url('../source/images/man-call-us.png') no-repeat right bottom;
 }
 .call-us:before {
     content: '';
     display: block;
     width: 100%;
-    background: url('../source/images/background-statistics-top.png') no-repeat center;
-    position: relative;
+    padding-top: 3.2%;
+    background: url('../source/images/background-call-us-top.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    bottom: 100%;
 }
-.
+.call-us h2 {
+    display: inline-block;
+    width: 550px;
+    margin-bottom: 45px;
+}
+.call-us h2 span {
+    display: block;
+    color: #c22726;
+}
+.call-us ul {
+    display: block;
+    width: 550px;
+    margin-bottom: 50px;
+}
+.call-us ul li {
+    display: block;
+    font-size: 1.214285714285714em;
+    padding-left: 60px;
+    line-height: 40px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.call-us ul li span {
+    font-family: "NotoSans Bold", sans-serif;
+    font-size: inherit;
+}
+.call-us ul li:before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: transparent url('../source/images/icon-ok.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.call-us ul li:last-child {
+    margin-bottom: 0;
+}
+
 /******************************
 ********* statistics **********
 ******************************/
@@ -829,6 +1126,9 @@ header, footer {
 ******************************/
 footer[role='contentinfo'] {
     height: 820px;
+}
+footer .form-order {
+    margin-top: 30px;
 }
 .footer-order {
     position: absolute;

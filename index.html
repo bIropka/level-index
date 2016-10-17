@@ -5,6 +5,7 @@
     <title>Уровень - отделочные работы</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/flipclock.css">
     <link rel="stylesheet" href="css/custom-styles.css">
 </head>
 <body>
@@ -33,9 +34,9 @@
 
     <div class="wrapper">
 
-        <div class="header-contacts">
+        <div class="logo"></div>
 
-            <div class="logo"></div>
+        <div class="header-contacts">
 
             <div class="callback">
 
@@ -55,15 +56,17 @@
 
         </div>
 
-        <h1>Механизированное нанесение штукатурки за 1 день</h1>
+        <h1>Механизированное нанесение<br> штукатурки за 1 день</h1>
 
         <div class="moscow">в Москве и Московской области</div>
 
-        <div class="timer">
+        <div class="timer-wrap">
 
             <p>До конца акции:</p>
 
-            <ul>
+            <div class="timer"></div>
+
+            <!--<ul>
 
                 <li> <span class="days">00</span>
                     <p class="days_ref">дней</p>
@@ -87,7 +90,7 @@
                     <p class="seconds_ref">секунд</p>
                 </li>
 
-            </ul>
+            </ul>-->
 
         </div>
 
@@ -95,21 +98,21 @@
 
         <p>Оставьте заявку и <span>сэкономьте до 2 500 рублей!</span></p>
 
-        <form action="#" class="form-order">
+        <form action="#" class="form-order" id="form-order-1">
 
-            <label class="form-field-wrap">
+            <label class="form-field-wrap name-wrap">
                 <input type="text" class="form-field" placeholder="Ваше имя">
             </label>
 
-            <label class="form-field-wrap">
+            <label class="form-field-wrap phone-wrap">
                 <input type="text" class="form-field" placeholder="Ваш телефон">
             </label>
 
-            <button type="submit">Сделать заказ</button>
+            <button type="submit">сделать заказ</button>
 
-            <input type="checkbox" id="order-checkbox" class="custom-checkbox">
-            <label for="order-checkbox">
-                Даю согласие на обработку своих персональных данных в соответствии с соглашением по использованию сайта и <a href="#">Федеральным законом «О персональных данных»</a>
+            <input type="checkbox" id="order-checkbox-1" class="custom-checkbox">
+            <label for="order-checkbox-1" class="custom-checkbox-label">
+                Даю согласие на обработку своих персональных данных в соответствии с соглашением<br> по использованию сайта и <a href="#">Федеральным законом «О персональных данных»</a>
             </label>
 
         </form>
@@ -290,19 +293,19 @@
 
         <form action="#" class="form-order" id="form-order-2">
 
-            <label class="form-field-wrap">
+            <label class="form-field-wrap name-wrap">
                 <input type="text" class="form-field" placeholder="Ваше имя">
             </label>
 
-            <label class="form-field-wrap">
+            <label class="form-field-wrap phone-wrap">
                 <input type="text" class="form-field" placeholder="Ваш телефон">
             </label>
 
-            <button type="submit">Сделать заказ</button>
+            <button type="submit">Вызвать замерщика</button>
 
             <input type="checkbox" id="order-checkbox-2" class="custom-checkbox">
-            <label for="order-checkbox-2">
-                Даю согласие на обработку своих персональных данных в соответствии с соглашением по использованию сайта и <a href="#">Федеральным законом «О персональных данных»</a>
+            <label for="order-checkbox-2" class="custom-checkbox-label">
+                Даю согласие на обработку своих персональных данных в соответствии с соглашением<br> по использованию сайта и <a href="#">Федеральным законом «О персональных данных»</a>
             </label>
 
         </form>
@@ -457,15 +460,15 @@
 
             <form action="#" class="form-order" id="form-order-3">
 
-                <label class="form-field-wrap">
+                <label class="form-field-wrap name-wrap">
                     <input type="text" class="form-field" placeholder="Ваше имя">
                 </label>
 
-                <label class="form-field-wrap">
+                <label class="form-field-wrap phone-wrap">
                     <input type="text" class="form-field" placeholder="Ваш телефон">
                 </label>
 
-                <button type="submit">Сделать заказ</button>
+                <button type="submit">оставить заявку</button>
 
             </form>
 
@@ -492,7 +495,7 @@
 </footer>
 
 <script src="js/jquery-3.1.0.min.js"></script>
-<script src="js/jquery.downCount.js"></script>
+<script src="js/flipclock.min.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/validatr.min.js"></script>
