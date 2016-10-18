@@ -1163,7 +1163,8 @@ header .form-order {
 .reviews {
     margin-top: 60px;
     padding-bottom: 30px;
-    background: url('../source/images/reviews-decor-1.png') no-repeat 0 100px, url('../source/images/reviews-decor-2.png') no-repeat 100% 100px;
+    background: url('../source/images/background-reviews-machines.png') no-repeat center 80px;
+    background-size: cover;
 }
 .reviews h2 span {
     color: #c22726;
@@ -1412,11 +1413,7 @@ footer .form-order {
 /******************************
 ******* media queries *********
 ******************************/
-@media (max-width: 1600px) {
-    .reviews {
-        background: none;
-    }
-}
+
 @media (max-width: 1440px) {
     .partner-product {
         display: none;
