@@ -206,6 +206,9 @@ header, footer {
     height: 50px;
     padding-left: 25px;
 }
+.form-order .tel-wrap .form-field {
+    padding-left: 35px;
+}
 button {
     display: block;
     float: left;
@@ -231,7 +234,7 @@ button:hover {
     vertical-align: middle;
     font-family: "NotoSans Italic", sans-serif;
     font-size: 0.9333333333333333em;
-    margin-top: 50px;
+    margin-top: 10px;
     line-height: 1;
     position: relative;
     padding-left: 45px;
@@ -261,14 +264,17 @@ button:hover {
 }
 .form-order .custom-checkbox:checked + .custom-checkbox-label:before {
     background: #ffffff url('../source/images/icon-ok-small.png') no-repeat center;
-    background-size: 80% auto;
+    background-size: 60% auto;
 }
-.form-order .custom-checkbox.invalid-field + .custom-checkbox-label:before {
+.form-order .custom-checkbox-label.invalid-field:before {
     border: 1px solid #c22726;
 }
-.invalid-field {
+.form-field.invalid-field {
     border: none;
     border-bottom: 1px solid #ff0000!important;
+}
+.validatr-message {
+    display: none;
 }
 
 .logo-part {
@@ -349,6 +355,26 @@ nav ul li a:hover {
 nav ul li.active a:after {
     left: 0;
     right: 0;
+}
+nav ul li a:hover:after {
+    left: 0;
+    right: 0;
+    background: #c22726;
+}
+nav ul li.active a:hover:after {
+    background: #fdae1e;
+}
+.field-message {
+    width: 100%;
+    min-height: 20px;
+    margin: 10px 0;
+    float: left;
+}
+.field-message.error {
+    color: #c22726;
+}
+.field-message.success {
+    color: #006400;
 }
 /******************************
 ********** header ************
@@ -554,7 +580,7 @@ header .form-order {
 .problems .wrapper {
     padding-top: 30px;
     padding-bottom: 30px;
-    background: url('../source/images/decor-left.png') no-repeat right, url('../source/images/man-problems.png') no-repeat left 80px;
+    background: url('../source/images/decor-left.png') no-repeat right 50px, url('../source/images/man-problems.png') no-repeat left 80px;
     background-size: auto, auto 100%;
 }
 .problems h2 {
@@ -599,12 +625,13 @@ header .form-order {
 .solutions {
     background: url('../source/images/background-advantages.jpg') no-repeat center bottom;
     background-size: cover;
-    padding-top: 30px;
     padding-bottom: 100px;
     position: relative;
 }
 .solutions .wrapper {
+    padding-top: 30px;
     background: url('../source/images/decor-right.png') no-repeat left, url('../source/images/man-advantages.png') no-repeat right top;
+    background-size: auto, 50%;
 }
 .solutions h2 span {
     color: #c22726;
@@ -705,6 +732,7 @@ header .form-order {
     position: absolute;
     left: 0;
     top: -15px;
+    z-index: 1;
 }
 .steps li:after {
     content: '';
@@ -740,6 +768,7 @@ header .form-order {
     position: absolute;
     left: 20px;
     top: 0;
+    z-index: 2;
 }
 .steps li:nth-child(1) p:after {
     background-position: 0 0;
@@ -885,25 +914,13 @@ header .form-order {
 ********** call-us ************
 ******************************/
 .call-us {
-    background: #eef0ed url('../source/images/call-us-decor.png') no-repeat left top;
+    background: url('../source/images/man-call-us.jpg') no-repeat center top, url('../source/images/call-us-decor.png') no-repeat left top;
+    background-size: cover, auto;
     position: relative;
-    padding-top: 30px;
-}
-.call-us .wrapper {
+    padding-top: 100px;
     padding-bottom: 120px;
-    background: url('../source/images/man-call-us.png') no-repeat right bottom;
 }
-.call-us:before {
-    content: '';
-    display: block;
-    width: 100%;
-    padding-top: 3.2%;
-    background: url('../source/images/background-call-us-top.png') no-repeat center;
-    background-size: cover;
-    position: absolute;
-    left: 0;
-    bottom: 100%;
-}
+
 .call-us h2 {
     display: inline-block;
     width: 550px;
@@ -1021,7 +1038,6 @@ header .form-order {
 ********** partner ************
 ******************************/
 .partner {
-    overflow: hidden;
     padding-top: 35px;
 }
 .partner h2 {
@@ -1131,12 +1147,12 @@ header .form-order {
     z-index: 5;
 }
 .slick-prev {
-    left: -10px;
+    left: -20px;
     background: transparent url('../source/images/sprite-slider-controls.png') no-repeat left center;
     background-size: cover;
 }
 .slick-next {
-    right: -10px;
+    right: -20px;
     background: transparent url('../source/images/sprite-slider-controls.png') no-repeat right center;
     background-size: cover;
 }
@@ -1171,10 +1187,10 @@ header .form-order {
     padding: 35px 20px 35px 40px;
 }
 .slider-reviews .slick-prev {
-    left: -35px;
+    left: -45px;
 }
 .slider-reviews .slick-next {
-    right: -35px;
+    right: -45px;
 }
 .slider-reviews .slide p {
     margin: 5px 0;
@@ -1238,7 +1254,7 @@ footer .form-order {
     right: 0;
     top: 0;
     background: url('../source/images/border-red.png') no-repeat center bottom;
-    background-size: 100% 100%;
+    background-size: auto 100%;
     text-align: center;
     padding: 25px 0 85px;
     z-index: 1;
@@ -1422,6 +1438,10 @@ footer .form-order {
 
 @media (max-width: 1280px) {
 
+    header[role='banner'] {
+        padding-left: 13%;
+    }
+
     h2 {
         font-size: 1.3em;
     }
@@ -1478,6 +1498,24 @@ footer .form-order {
     }
 
 }
+@media (max-width: 1200px) {
+
+    header[role='banner'] {
+        padding-left: 10%;
+    }
+}
+@media (max-width: 1100px) {
+
+    header[role='banner'] {
+        padding-left: 5%;
+    }
+}
+@media (max-width: 1000px) {
+
+    header[role='banner'] {
+        padding-left: 0;
+    }
+}
 
 @media (max-width: 1080px) {
 
@@ -1511,9 +1549,12 @@ footer .form-order {
 
 @media (max-width: 980px) {
 
-
+    header[role='banner'] {
+        text-align: center;
+    }
     .logo {
-        top: -10px;
+        display: inline-block;
+        position: static;
     }
     h1 {
         font-size: 2.5em;
@@ -1530,6 +1571,12 @@ footer .form-order {
     header .tagline {
         font-size: 1.6em;
     }
+    .header-contacts {
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        margin-left: 30px;
+    }
     .header-contacts .callback, .header-contacts .write-us {
         display: block;
         margin-left: 0;
@@ -1537,12 +1584,27 @@ footer .form-order {
     .header-contacts .write-us {
         margin-top: 10px;
     }
+    .form-order {
+        display: inline-block;
+        vertical-align: top;
+        width: 500px;
+        text-align: left;
+    }
+    .form-order br {
+        display: none;
+    }
     .form-order .form-field-wrap {
         float: none;
-        width: 90%;
-        max-width: 450px;
+        width: 100%;
+        max-width: 350px;
         margin-bottom: 25px;
-        background-position: 425px center;
+        background-position: 320px center;
+    }
+    button {
+        width: 100%;
+        max-width: 360px;
+        background-position: 1px center;
+        background-size: 100% 100%;
     }
     .problems .wrapper {
         background: url('../source/images/decor-left.png') no-repeat right;
@@ -1569,8 +1631,13 @@ footer .form-order {
     .steps:before, .steps:after {
         display: none;
     }
-    .call-us .wrapper {
-        padding-bottom: 40px;
+    .call-us  {
+        text-align: center;
+        background: #eef0ed;
+    }
+    .call-us ul {
+        display: inline-block;
+        text-align: left;
     }
     .logo-stroyberg {
         width: 210px;
@@ -1588,9 +1655,7 @@ footer .form-order {
     footer[role='contentinfo'] {
         padding-top: 100px;
         height: auto;
-    }
-    footer .form-order {
-        display: block;
+        text-align: center;
     }
     .footer-contacts {
         bottom: 0;
@@ -1646,10 +1711,47 @@ footer .form-order {
         padding-left: 50px;
         padding-right: 50px;
     }
+    .call-us {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .form-order {
+        width: 450px;
+    }
+    .reviews {
+        margin-top: 20px;
+    }
+    .slider-partner {
+        width: 90%;
+    }
+    .slider-reviews {
+        width: 100%;
+    }
+    .slider-reviews .slick-prev {
+        top: -70px;
+        bottom: auto;
+        left: 0;
+        right: auto;
+    }
+    .slider-reviews .slick-next {
+        top: -70px;
+        bottom: auto;
+        left: auto;
+        right: 0;
+    }
+    .reviews h2 {
+        text-align: center;
+    }
+
 
 }
 
 @media (max-width: 480px) {
+    .solutions {
+        background: #fdae1e;
+        padding-bottom: 50px;
+        margin-bottom: 30px;
+    }
     .logo {
         margin-left: 30px;
         margin-bottom: 20px;
@@ -1684,5 +1786,20 @@ footer .form-order {
     }
     .call-us ul li {
         line-height: 1.2;
+    }
+    .form-order {
+        width: 100%;
+    }
+    .reviews h2 {
+        margin-bottom: 80px;
+    }
+    .slider-reviews .slick-prev {
+        top: -65px;
+    }
+    .slider-reviews .slick-next {
+        top: -65px;
+        bottom: auto;
+        left: 50px;
+        right: auto;
     }
 }
