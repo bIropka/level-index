@@ -271,6 +271,24 @@ button:hover {
     border-bottom: 1px solid #ff0000!important;
 }
 
+.logo-part {
+    display: block;
+    width: 50px;
+    height: 45px;
+    background: url('../source/images/logo-part.png') no-repeat center;
+    position: absolute;
+    left: 25px;
+    top: -500px;
+    -webkit-transition: 0.8s;
+    -moz-transition: 0.8s;
+    -ms-transition: 0.8s;
+    -o-transition: 0.8s;
+    transition: 0.8s;
+}
+.logo-part.active {
+    top: -5px;
+}
+
 nav {
     display: block;
     width: 100%;
@@ -281,7 +299,7 @@ nav {
     right: 0;
     z-index: 10;
     text-align: right;
-    padding: 25px 0 15px;
+    padding: 20px 0;
     -webkit-transition: 1s;
     -moz-transition: 1s;
     -ms-transition: 1s;
@@ -339,6 +357,7 @@ header[role='banner'] {
     background: #e5decb url('../source/images/man-header.png') no-repeat center 50px;
     background-size: auto;
     padding: 140px 0 45px;
+    overflow: hidden;
 }
 .logo {
     display: block;
@@ -1454,24 +1473,30 @@ footer .form-order {
     .statistics:before {
         display: none;
     }
+    .logo-part, .logo-part.active {
+        top: -5px;
+    }
 
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1080px) {
 
+    nav {
+        text-align: right;
+    }
     nav ul {
         display: none;
     }
     nav ul li {
         display: block;
-        text-align: left;
+        text-align: right;
         margin-top: 15px;
     }
     nav ul li a:after {
         display: none;
     }
     .burger {
-        display: block;
+        display: inline-block;
         width: 30px;
         height: 30px;
         background: url('../source/images/bars.png') no-repeat center;
@@ -1481,6 +1506,12 @@ footer .form-order {
         background: url('../source/images/bars-closed.png') no-repeat center;
         background-size: cover;
     }
+
+}
+
+@media (max-width: 980px) {
+
+
     .logo {
         top: -10px;
     }

@@ -4,6 +4,15 @@ $(document).ready(function () {
      ****** scroll scripts ********
      ******************************/
 
+    if ($(window).width() > '1280') {
+        if ($(window).scrollTop() > 300) {
+            $('.logo-part').addClass('active');
+        } else {
+
+            $('.logo-part').removeClass('active');
+        }
+    }
+
     if ($(window).scrollTop() < $('#solutions').offset().top - 200) {
         $('nav ul li.active').removeClass('active');
         $('nav ul li:nth-child(1)').addClass('active');
@@ -33,6 +42,15 @@ $(document).ready(function () {
     }
 
     $(window).scroll(function() {
+        
+        if ($(window).width() > '1280') {
+            if ($(window).scrollTop() > 300) {
+                $('.logo-part').addClass('active');
+            } else {
+
+                $('.logo-part').removeClass('active');
+            }
+        }
 
         if ($(window).scrollTop() < $('#solutions').offset().top - 200) {
             $('nav ul li.active').removeClass('active');
