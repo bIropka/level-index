@@ -97,8 +97,9 @@ $(document).ready(function () {
                 // Добавление решётки к имени ID
                 var formNm = $('#' + formID);
                 var scriptFile;
-                if (formID == 'form-order') scriptFile = 'mail-order.php';
+                if (formID == 'form-order-1' || formID == 'form-order-2'|| formID == 'form-order-3') scriptFile = 'mail-order.php';
                 if (formID == 'form-callback') scriptFile = 'mail-callback.php';
+                if (formID == 'form-write-us') scriptFile = 'mail-callback.php';
                 $.ajax({
                     type: "POST",
                     url: scriptFile,
@@ -119,12 +120,6 @@ $(document).ready(function () {
 
     $('button[type="submit"]').click(function() {
         $(this).parents('form').find('.form-field:invalid').addClass('invalid-field');
-        if(document.getElementById('order-checkbox').checked) {
-            document.getElementById('order-checkbox').classList.remove('invalid-field');
-        } else {
-            document.getElementById('order-checkbox').classList.add('invalid-field');
-        }
-        $(this).parents('form').find('.custom-checkbox:invalid').addClass('invalid-field');
         $(this).parents('form').find('.no-checked').removeClass('invalid-field');
     });
 
@@ -252,6 +247,18 @@ $(document).ready(function () {
                 breakpoint: 769,
                 settings: {
                     slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 400,
+                settings: {
+                    slidesToShow: 1
                 }
             }
         ]
