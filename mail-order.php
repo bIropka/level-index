@@ -2,11 +2,9 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['order-name'])) {$name = $_POST['order-name'];}
     if (isset($_POST['order-tel'])) {$phone = $_POST['order-tel'];}
-    if (isset($_POST['order-email'])) {$email = $_POST['order-email'];}
-    if (isset($_POST['formData'])) {$formData = $_POST['formData'];}
 
-    $to = "tleugazin@gmail.com"; /*Укажите адрес, на который должно приходить письмо*/
-    $sendfrom   = "uspc"; /*Укажите адрес, с которого будет приходить письмо, можно не настоящий, нужно для формирования заголовка письма*/
+    $to = "biropka@gmail.com"; /*Укажите адрес, на который должно приходить письмо*/
+    $sendfrom   = "level"; /*Укажите адрес, с которого будет приходить письмо, можно не настоящий, нужно для формирования заголовка письма*/
     $headers  = "From: " . strip_tags($sendfrom) . "\r\n";
     $headers .= "Reply-To: ". strip_tags($sendfrom) . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
