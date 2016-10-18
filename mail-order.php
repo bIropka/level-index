@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html;charset=utf-8 \r\n";
     $subject = "$formData";
-    $message = "$formData <br><b>Поступил заказ </b> <br> <b>Имя клиента:</b> $name <br><b>Телефон:</b> $phone <br> <b>Email:</b> $email";
+    $message = "$formData <br><b>Поступил заказ </b> <br> <b>Имя клиента:</b> $name <br><b>Телефон:</b> $phone";
     $send = mail ($to, $subject, $message, $headers);
     if ($send == 'true')
     {

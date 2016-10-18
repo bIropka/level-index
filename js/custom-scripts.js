@@ -99,7 +99,7 @@ $(document).ready(function () {
                 var scriptFile;
                 if (formID == 'form-order-1' || formID == 'form-order-2'|| formID == 'form-order-3') scriptFile = 'mail-order.php';
                 if (formID == 'form-callback') scriptFile = 'mail-callback.php';
-                if (formID == 'form-write-us') scriptFile = 'mail-callback.php';
+                if (formID == 'form-write-us') scriptFile = 'mail-write-us.php';
                 $.ajax({
                     type: "POST",
                     url: scriptFile,
